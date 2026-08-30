@@ -1,0 +1,1136 @@
+options:
+	p: §x§C§0§1§4§1§4§lPUNISH &8→&7
+	gui: &8[§x§C§0§1§4§1§4§lPUNISH MENU&8] &8→ &eHomePage
+	bangui: &8[§x§C§0§1§4§1§4§lPUNISH MENU&8] &8→ &cBanns
+	unpunishgui: &8[§x§C§0§1§4§1§4§lUNPUNISH MENU&8] &8→ &eHomePage
+	kickgui: &8[§x§C§0§1§4§1§4§lPUNISH MENU&8] &8→ &x&F&A&B&3&3&0Kicks
+	mutegui: &8[§x§C§0§1§4§1§4§lPUNISH MENU&8] &8→ &x&F&3&2&1&E&5Mutes
+	dc: https://discord.gg/bWQX7FYpnQ
+
+
+function punishmenu(m: player, v: offline player):
+	set {_punishmenu} to a new chest inventory with 4 row named "{@gui}" 
+	set slot 0 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 1 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 2 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 3 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 4 of {_punishmenu} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Gebannt: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Aktuelle Seite: &eHomePage &8«"
+	set slot 5 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 6 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 7 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 8 of {_punishmenu} to black stained glass pane named ""
+	set slot 9 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 10 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 11 of {_punishmenu} to red dye named "&8» <#DE1717>Bannen" with lore "&8ᴘᴜɴɪꜱʜ-ᴋᴀᴛᴇɢᴏʀɪᴇ" and "&f" and "&8➥ &7Öffne den Bann-Katalog"
+	set slot 12 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 13 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 14 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 15 of {_punishmenu} to magenta dye named "&8» <#F321E5>Muten" with lore "&8ᴘᴜɴɪꜱʜ-ᴋᴀᴛᴇɢᴏʀɪᴇ" and "&f" and "&8➥ &7Öffne den Mute-Katalog"
+	set slot 16 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 17 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 18 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 19 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 20 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 21 of {_punishmenu} to orange dye named "&8» <#FAB330>Kicken" with lore "&8&8ᴘᴜɴɪꜱʜ-ᴋᴀᴛᴇɢᴏʀɪᴇ" with lore "&f" and "&8➥ &7Öffne den Kick-Katalog"
+	set slot 22 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 23 of {_punishmenu} to green dye named "&8» <#30FA3E>Unpunish" with lore "&8ᴘᴜɴɪꜱʜ-ᴋᴀᴛᴇɢᴏʀɪᴇ" and "&f" and "&8➥ &7Öffne das Unpunish-Menu &8(&e/unpunish %{_v}%&8)"
+	set slot 24 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 25 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 26 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 27 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 28 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 29 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 30 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 31 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 32 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 33 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 34 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 35 of {_punishmenu} to black stained glass pane named "&f"
+	open {_punishmenu} to {_m}
+	set {lastpunish.%{_m}%} to {_v}
+
+function unpunishmenu(m: player, v: offline player):
+	set {_unpunish} to a new chest inventory with 3 row named "{@unpunishgui}"
+	set slot 0 of {_unpunish} to black stained glass pane named "&f"
+	set slot 1 of {_unpunish} to black stained glass pane named "&f"
+	set slot 2 of {_unpunish} to black stained glass pane named "&f"
+	set slot 3 of {_unpunish} to black stained glass pane named "&f"
+	set slot 4 of {_unpunish} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Gebannt: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Aktuelle Seite: &aEntpunish Menu &8«"
+	set slot 5 of {_unpunish} to black stained glass pane named "&f"
+	set slot 6 of {_unpunish} to black stained glass pane named "&f"
+	set slot 7 of {_unpunish} to black stained glass pane named "&f"
+	set slot 8 of {_unpunish} to black stained glass pane named "&f"
+	set slot 9 of {_unpunish} to black stained glass pane named "&f"
+	set slot 10 of {_unpunish} to black stained glass pane named "&f"
+	set slot 11 of {_unpunish} to crimson button named "&8» <#EA7627>Entbann" with lore "&8ᴜɴᴘᴜɴɪꜱʜ-ᴋᴀᴛᴇɢᴏʀɪᴇ" and "&f" and "&8➥ &7Klicke, um den Spieler zu <#EA7627>entbannen"
+	set slot 12 of {_unpunish} to black stained glass pane named "&f"
+	set slot 13 of {_unpunish} to black stained glass pane named "&f"
+	set slot 14 of {_unpunish} to black stained glass pane named "&f"
+	set slot 15 of {_unpunish} to cherry button named "&8» <#EF26DA>Entmute" with lore "&8ᴜɴᴘᴜɴɪꜱʜ-ᴋᴀᴛᴇɢᴏʀɪᴇ" and "&f" and "&8➥ &7Klicke, um den Spieler zu <#EF26DA>entmuten"
+	set slot 16 of {_unpunish} to black stained glass pane named "&f"
+	set slot 17 of {_unpunish} to black stained glass pane named "&f"
+	set slot 18 of {_unpunish} to black stained glass pane named "&f"
+	set slot 19 of {_unpunish} to black stained glass pane named "&f"
+	set slot 20 of {_unpunish} to black stained glass pane named "&f"
+	set slot 21 of {_unpunish} to black stained glass pane named "&f"
+	set slot 22 of {_unpunish} to black stained glass pane named "&f"
+	set slot 23 of {_unpunish} to black stained glass pane named "&f"
+	set slot 24 of {_unpunish} to black stained glass pane named "&f"
+	set slot 25 of {_unpunish} to black stained glass pane named "&f"
+	set slot 26 of {_unpunish} to black stained glass pane named "&f"
+	open {_unpunish} to {_m}
+	set {lastunpunish.%{_m}%} to {_v}
+
+
+function banmenu(m: player, v: offline player):
+	set {_banmenu} to a new chest inventory with 4 row named "{@bangui}"
+	set slot 0 of {_banmenu} to arrow named "&8» &7Zurück zur HomePage"
+	set slot 1 of {_banmenu} to black stained glass pane named "&f"
+	set slot 2 of {_banmenu} to black stained glass pane named "&f"
+	set slot 3 of {_banmenu} to black stained glass pane named "&f"
+	set slot 4 of {_banmenu} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Gebannt: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Aktuelle Seite: &cBan-Katalog &8«"
+	set slot 5 of {_banmenu} to black stained glass pane named ""
+	set slot 6 of {_banmenu} to black stained glass pane named ""
+	set slot 7 of {_banmenu} to black stained glass pane named ""
+	set slot 8 of {_banmenu} to black stained glass pane named ""
+	set slot 9 of {_banmenu} to black stained glass pane named ""
+	{_m} has permission "group.moderator":
+		set {_r} to "&7Klicke, um diesen Spieler zu bannen"
+	else:
+		set {_r} to "&7Diesen Banngrund kannst du nicht nutzen &8(&3Mod+&8)"
+	set slot 10 of {_banmenu} to book named "&8» <#DEB017>Hausverbot" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DE7817>Permanent" and "&8➥ %{_r}%"
+	set slot 11 of {_banmenu} to book named "&8» <#DEB017>Duping" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DE7817>Permanent" and "&8➥ &7Klicke, um diesen Spieler zu bannen"
+	set slot 12 of {_banmenu} to book named "&8» <#DEB017>Online-Shop Betrug" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DE7817>Permanent" and "&8➥ &7Klicke, um diesen Spieler zu bannen"
+	set slot 13 of {_banmenu} to book named "&8» <#DEB017>Strafumgehung" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DEB017>30 Tage" and "&8➥ &7Klicke, um diesen Spieler zu bannen"
+	set slot 14 of {_banmenu} to book named "&8» <#DEB017>Unerlaubte Clientmodifikationen" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DEB017>14 Tage" and "&8➥ &7Klicke, um diesen Spieler zu bannen"
+	set slot 15 of {_banmenu} to book named "&8» <#DEB017>Unerlaubte Bauwerke" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DEB017>14 Tage" and "&8➥ &7Klicke, um diesen Spieler zu bannen"
+	set slot 16 of {_banmenu} to book named "&8» <#DEB017>Scamming" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DEB017>14 Tage" and "&8➥ &7Klicke, um diesen Spieler zu bannen"
+	set slot 17 of {_banmenu} to black stained glass pane named "&f"
+	set slot 18 of {_banmenu} to black stained glass pane named "&f"
+	set slot 19 of {_banmenu} to book named "&8» <#DEB017>Bugusing" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DEB017>7 Tage" and "&8➥ &7Klicke, um diesen Spieler zu bannen"
+	set slot 20 of {_banmenu} to book named "&8» <#DEB017>Unerlaubter Name/Skin" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer &8→ <#DEB017>7 Tage" and "&8➥ &7Klicke, um diesen Spieler zu bannen"
+	set slot 21 of {_banmenu} to black stained glass pane named "&f"
+	set slot 22 of {_banmenu} to black stained glass pane named "&f"
+	set slot 23 of {_banmenu} to black stained glass pane named "&f"
+	set slot 24 of {_banmenu} to black stained glass pane named "&f"
+	set slot 25 of {_banmenu} to black stained glass pane named "&f"
+	set slot 26 of {_banmenu} to black stained glass pane named "&f"
+	set slot 27 of {_banmenu} to black stained glass pane named "&f"
+	set slot 28 of {_banmenu} to black stained glass pane named "&f"
+	set slot 29 of {_banmenu} to black stained glass pane named "&f"
+	set slot 30 of {_banmenu} to black stained glass pane named "&f"
+	set slot 31 of {_banmenu} to black stained glass pane named "&f"
+	set slot 32 of {_banmenu} to black stained glass pane named "&f"
+	set slot 33 of {_banmenu} to black stained glass pane named "&f"
+	set slot 34 of {_banmenu} to black stained glass pane named "&f"
+	set slot 35 of {_banmenu} to black stained glass pane named "&f"
+	open {_banmenu} to {_m} 
+
+function kickmenu(m: player, v: offline player):
+	set {_kickmenu} to a new chest inventory with 4 row named "{@kickgui}"
+	set slot 0 of {_kickmenu} to arrow named "&8» &7Zurück zur HomePage"
+	set slot 1 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 2 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 3 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 4 of {_kickmenu} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Gebannt: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Aktuelle Seite: <#FAB330>Kick-Katalog &8«"
+	set slot 5 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 6 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 7 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 8 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 9 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 10 of {_kickmenu} to book named "&8» <#FAB330>Störung von Shop-Kauf" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥&7 Klicke, um den Spieler zu kicken"
+	set slot 11 of {_kickmenu} to book named "&8» <#FAB330>Rejoin-Request" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥&7 Klicke, um den Spieler zu kicken"
+	set slot 12 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 13 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 14 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 15 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 16 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 17 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 18 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 19 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 20 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 21 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 22 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 23 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 24 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 25 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 26 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 27 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 28 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 29 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 30 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 31 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 32 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 33 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 34 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 35 of {_kickmenu} to black stained glass pane named "&f"
+	open {_kickmenu} to {_m}
+
+function mutemenu(m: player, v: offline player):
+	set {_mutemenu} to a new chest inventory with 4 row named "{@mutegui}"
+	set slot 0 of {_mutemenu} to arrow named "&8» &7Zurück zur HomePage"
+	set slot 1 of {_mutemenu} to black stained glass pane named ""
+	set slot 2 of {_mutemenu} to black stained glass pane named ""
+	set slot 3 of {_mutemenu} to black stained glass pane named ""
+	set slot 4 of {_mutemenu} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Gebannt: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Aktuelle Seite: <#F321E5>Mute-Katalog &8«"
+	set slot 5 of {_mutemenu} to black stained glass pane named ""
+	set slot 6 of {_mutemenu} to black stained glass pane named ""
+	set slot 7 of {_mutemenu} to black stained glass pane named ""
+	set slot 8 of {_mutemenu} to black stained glass pane named ""
+	set slot 9 of {_mutemenu} to black stained glass pane named ""
+	set slot 10 of {_mutemenu} to book named "&8» <#DEB017>Fremdwerbung" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DE7817>Permanent" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	{_m} has permission "group.moderator":
+		set {_r} to "&7Klicke, um diesen Spieler zu muten"
+	else:
+		set {_r} to "&7Diesen Mutegrund kannst du nicht nutzen &8(&3Mod+&8)"
+	set slot 11 of {_mutemenu} to book named "&8» <#DEB017>Chatverbot" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DE7817>Permanent" and "&8➥ %{_r}%"
+	set slot 12 of {_mutemenu} to book named "&8» <#DEB017>Kinderschutz" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DE7817>Permanent" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 13 of {_mutemenu} to book named "&8» <#DEB017>(Sexuelle-) Belästigung" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>14 Tage" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 14 of {_mutemenu} to book named "&8» <#DEB017>Echtgeldhandel" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>14 Tage" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 15 of {_mutemenu} to book named "&8» <#DEB017>Chatverhalten" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>1 Tag" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 16 of {_mutemenu} to book named "&8» <#DEB017>Diskutieren mit dem Team" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>1 Tag" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 17 of {_mutemenu} to black stained glass pane named "&f"
+	set slot 18 of {_mutemenu} to black stained glass pane named ""
+	set slot 19 of {_mutemenu} to book named "&8» <#DEB017>Erpressung/Drohung" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>1 Tag" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 20 of {_mutemenu} to book named "&8» <#DEB017>Trolling" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>1 Tage" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 21 of {_mutemenu} to book named "&8» <#DEB017>Provokation" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>12 Stunden" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 22 of {_mutemenu} to book named "&8» <#DEB017>Starke Beleidigung" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>10 Stunden" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 23 of {_mutemenu} to book named "&8» <#DEB017>Beleidigung" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>6 Stunden" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 24 of {_mutemenu} to book named "&8» <#DEB017>Bettellei" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>6 Stunden" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 25 of {_mutemenu} to book named "&8» <#DEB017>Spamming/Caps" with lore "&8ᴘᴜɴɪꜱʜ-ɢʀᴜɴᴅ" and "&f" and "&8➥ &7Dauer: <#DEB017>6 Stunden" and "&8➥ &7Klicke, um diesen Spieler zu muten"
+	set slot 26 of {_mutemenu} to black stained glass pane named ""
+	set slot 27 of {_mutemenu} to black stained glass pane named ""
+	set slot 28 of {_mutemenu} to black stained glass pane named ""
+	set slot 29 of {_mutemenu} to black stained glass pane named ""
+	set slot 30 of {_mutemenu} to black stained glass pane named ""
+	set slot 31 of {_mutemenu} to black stained glass pane named ""
+	set slot 32 of {_mutemenu} to black stained glass pane named ""
+	set slot 33 of {_mutemenu} to black stained glass pane named ""
+	set slot 34 of {_mutemenu} to black stained glass pane named ""
+	set slot 35 of {_mutemenu} to black stained glass pane named ""
+	open {_mutemenu} to {_m}
+
+function timeleft(t: player) :: boolean:
+	set {_time} to {mute::%{_t}%::date} + {mute::%{_t}%::dur}
+	{_time} > now:
+		set {_left} to difference between now and {_time} 
+		set {mute::%{_t}%::left} to {_left}
+		return true 
+	else:
+		return false 
+
+function calcleft(t: offline player) :: timespan:
+	set {_time} to {mute::%{_t}%::date} + {mute::%{_t}%::dur}
+	if {_time} > now:
+		return difference between now and {_time}
+
+
+command /punish <offline player>:
+	permission: dreamcraft.system.punish 
+	permission message: {@p} &7Dazu hast du keine Rechte!
+	usage: {@p} &7Syntax: &e/punish <Spieler>
+	trigger:
+		{mutestate.%arg-1%} is not set:
+			set {mutestate.%arg-1%} to "<#32EA27>Nicht gemutet"
+		{ban::%arg-1%::state} is not set:
+			set {ban::%arg-1%::state} to "<#32EA27>Nicht gebannt"
+		arg-1 has permission "dreamcraft.system.punish.bypass":
+			send "{@p} &7Diesen Spieler kannst du nicht punishen!"
+			stop 
+		punishmenu(player, arg-1)
+
+command /unpunish <offline player>:
+	permission: dreamcraft.system.unpunish 
+	permission message: {@p} &7Dazu hast du keine Rechte!
+	usage: {@p} &7Syntax: &e/unpunish <Spieler>
+	trigger:
+		unpunishmenu(player, arg-1)
+
+on inventory-click:
+	name of event-inventory is "{@gui}"
+	cancel event 
+
+	clicked inventory is player's inventory:
+		stop
+
+	index of event-slot is 11:
+		banmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 15:
+		mutemenu(player, {lastpunish.%player%})
+	
+	index of event-slot is 21:
+		kickmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 23:
+		make player execute command "/unpunish %{lastpunish.%player%}%"
+
+on inventory-click:
+	name of event-inventory is "{@bangui}"
+	cancel event 
+
+	clicked inventory is player's inventory:
+		stop 
+
+	index of event-slot is 0:
+		punishmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 10:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Hausverbot"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>Permanent"
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Hausverbot%nl%&7Moderator: &3%player%%nl%&7Dauer: &3Permanent%nl%&7Endet in: &3Nie%nl%%nl%&7Entbannungsantrag: &e{@dc}"
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Hausverbot%nl%{@p} &7Dauer: <#EF7726>Permanent%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fWie in der Serververfassung: Raus.&8“"
+	
+	index of event-slot is 11:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Duping"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>Permanent"
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Duping%nl%&7Moderator: &3%player%%nl%&7Dauer: &3Permanent%nl%&7Endet in: &3Nie%nl%%nl%&7Entbannungsantrag: &e{@dc}"
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Duping%nl%{@p} &7Dauer: <#EF7726>Permanent%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fMutig. Aber falsch.&8“"
+	
+	index of event-slot is 12:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Online-Shop Betrug"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>Permanent"
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Online-Shop Betrug%nl%&7Moderator: &3%player%%nl%&7Dauer: &3Permanent%nl%&7Endet in: &3Nie%nl%%nl%&7Entbannungsantrag: &e{@dc}"
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Online-Shop Betrug%nl%{@p} &7Dauer: <#EF7726>Permanent%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fVielen Dank für Ihre Mitarbeit&8“"
+	
+	index of event-slot is 13:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Strafumgehung"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>30 Tage"
+		set {ban::%{_v}%::dur} to "30 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Strafumgehung%nl%&7Moderator: &3%player%%nl%&7Dauer: &330 Tage%nl%&7Endet: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Entbannungsantrag: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Strafumgehung%nl%{@p} &7Dauer: <#EF7726>30 Tage%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fDas war jetzt irgendwie Dumm&8“"
+	
+	index of event-slot is 14:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Unerlaubte Clientmodifikationen"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>14 Tage"
+		set {ban::%{_v}%::dur} to "14 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Unerlaubte Clientmodifikationen%nl%&7Moderator: &3%player%%nl%&7Dauer: &314 Tage%nl%&7Endet: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Entbannungsantrag: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Unerlaubte Clientmodifikationen%nl%{@p} &7Dauer: <#EF7726>14 Tage%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fWer hat dir erlaubt, Spaß zu haben?&8“"
+	
+	index of event-slot is 15:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Unerlaubte Bauwerke"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>14 Tage"
+		set {ban::%{_v}%::dur} to "14 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Unerlaubte Bauwerke%nl%&7Moderator: &3%player%%nl%&7Dauer: &314 Tage%nl%&7Endet: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Entbannungsantrag: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Unerlaubte Bauwerke%nl%{@p} &7Dauer: <#EF7726>14 Tage%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fFalscher Server&8“" to player for 2 seconds
+	
+	index of event-slot is 16:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Scamming"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>14 Tage"
+		set {ban::%{_v}%::dur} to "14 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Scamming%nl%&7Moderator: &3%player%%nl%&7Dauer: &314 Tage%nl%&7Endet: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Entbannungsantrag: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Scamming%nl%{@p} &7Dauer: <#EF7726>14 Tage%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fDas war maximal bescheuert.&8“" to player for 2 seconds
+	
+	index of event-slot is 19:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Bugusing"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>7 Tage"
+		set {ban::%{_v}%::dur} to "7 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Bugusing%nl%&7Moderator: &3%player%%nl%&7Dauer: &37 Tage%nl%&7Endet: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Entbannungsantrag: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Bugusing%nl%{@p} &7Dauer: <#EF7726>7 Tage%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fDu hast es versucht. Respekt.&8“" to player for 2 seconds
+	
+	index of event-slot is 20:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Gebannt"
+		set {ban::%{_v}%::reason} to "<#EF7726>Unerlaubter Name/Skin"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>7 Tage"
+		set {ban::%{_v}%::dur} to "7 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEBANNT%nl%%nl%&7Grund: &3Unerlaubter Name/Skin%nl%&7Moderator: &3%player%%nl%&7Dauer: &37 Tage%nl%&7Endet: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Entbannungsantrag: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7Du hast <#EF7726>%{_v}% &7gebannt"
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gebannt%nl%{@p} &7Grund: <#EF7726>Unerlaubter Name/Skin%nl%{@p} &7Dauer: <#EF7726>7 Tage%nl%"
+		close player's inventory 
+		send title "&3&lSPIELER GEBANNT" to player for 2 seconds 
+		send subtitle "&8„&fPlot twist: Du bist der Plot.&8“" to player for 2 seconds
+
+on inventory-click:
+	name of event-inventory is "{@unpunishgui}"
+	cancel event 
+
+	clicked inventory is player's inventory:
+		stop
+
+	index of event-slot is 11:
+		{lastunpunish.%player%} is banned:
+			set {_v} to {lastunpunish.%player%}
+			unban {lastunpunish.%player%} 
+			delete {ban::%{_v}%::*}
+			set {ban::%{_v}%::state} to "<#32EA27>Nicht gebannt"
+			close player's inventory 
+			send "{@p} &7Du hast <#EF7726>%{_v}% <#32EA28>entbannt"
+			loop all players:
+				loop-player has permission "dreamcraft.system.unpunish.notify":
+					send "{@p} <#32EA28>%{_v}% &7wurde von <#EF7726>%player% <#32EA28>entbannt"
+
+	index of event-slot is 15:
+		set {_v} to {lastunpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			set {mutestate.%{_v}%} to "<#32EA27>Nicht gemutet"
+			set {mute::%{_v}%::status} to false 
+			delete {mute::%{_v}%::*}
+			close player's inventory 
+			send "{@p} &7Du hast <#EF7726>%{_v}% <#32EA28>entmuted"
+			loop all players:
+				loop-player has permission "dreamcraft.system.unpunish.notify":
+					send "{@p} <#32EA28>%{_v}% &7wurde von <#EF7726>%player% <#32EA28>entmuted" to loop-player
+			{_v} is online:
+				send "%nl%{@p} &7Du wurdest <#32EA28>entmuted" to {_v}
+				send "{@p} &7Moderator: &3%player%%nl%" to {_v}
+
+on inventory-click:
+	name of event-inventory is "{@kickgui}"
+	cancel event 
+
+	clicked inventory is player's inventory:
+		stop
+
+	index of event-slot is 0:
+		punishmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 10:
+		set {_v} to {lastpunish.%player%}
+		{_v} is online:
+			kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEKICKT%nl%%nl%&7Grund: &3Stören von Shop-Kauf%nl%&7Moderator: &3%player%"
+			send "{@p} &7Du hast <#3BFA30>%{_v}% <#FAB330>gekickt"
+			loop all players:
+				loop-player has permission "dreamcraft.system.perks.notify":
+					send "%nl%{@p} <#EF7726>%player%&7 hat <#3BFA30>%{_v}% gekickt%nl%{@p} &7Grund: <#FAB330>Stören von Shop-Kauf%nl%"
+			close player's inventory 
+			send title "&3&lSPIELER GEKICKT" to player for 2 seconds
+
+	index of event-slot is 11:
+		set {_v} to {lastpunish.%player%}
+		{_v} is online:
+			kick {_v} due to "%nl%%nl%{@p} &7Du wurdest &4&lGEKICKT%nl%%nl%&7Grund: &3Bitte &3&nrejoinen%nl%&7Moderator: &3%player%"
+			send "{@p} &7Du hast <#3BFA30>%{_v}% <#FAB330>gekickt"
+			loop all players:
+				loop-player has permission "dreamcraft.system.perks.notify":
+					send "%nl%{@p} <#EF7726>%player%&7 hat <#3BFA30>%{_v}% gekickt%nl%{@p} &7Grund: <#FAB330>Bitte rejoinen%nl%"
+			close player's inventory
+			send title "&3&lSPIELER GEKICKT" to player for 2 seconds
+
+on inventory-click:
+	name of event-inventory is "{@mutegui}"
+	cancel event 
+	
+	clicked inventory is player's inventory:
+		stop 
+
+	index of event-slot is 0:
+		punishmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 10:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Fremdwerbung"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>Permanent"
+		set {mute::%{_v}%::date} to now
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {mute::%{_v}%::enddate} to "<#14A7A7>Nie"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Fremdwerbung%nl%{@p} &7Dauer: <#EF7726>Permanent%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fMinecraft, aber du darfst nicht mitspielen.&8“" to player for 2 seconds
+
+	index of event-slot is 11:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Chatverbot"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>Permanent"
+		set {mute::%{_v}%::date} to now
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {mute::%{_v}%::enddate} to "<#14A7A7>Nie"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Chatverbot%nl%{@p} &7Dauer: <#EF7726>Permanent%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fDein WLAN hat jetzt mehr Rechte als du.&8“" to player for 2 seconds
+
+	index of event-slot is 12:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Kinderschutz"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>Permanent"
+		set {mute::%{_v}%::date} to now
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {mute::%{_v}%::enddate} to "<#14A7A7>Nie"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Kinderschutz%nl%{@p} &7Dauer: <#EF7726>Permanent%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fUnd weg.&8“" to player for 2 seconds
+	
+	index of event-slot is 13:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>(Sexuelle-) Belästigung"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>14 Tage"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "14 days" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>(Sexuelle-) Belästigung%nl%{@p} &7Dauer: <#EF7726>14 Tage%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fTouch some grass&8“" to player for 2 seconds
+	
+	index of event-slot is 14:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Echtgeldhandel"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>14 Tage"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "14 days" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Echtgeldhandel%nl%{@p} &7Dauer: <#EF7726>14 Tage%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fFalscher Chat.&8“" to player for 2 seconds
+	
+	index of event-slot is 15:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Chatverhalten"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>1 Tag"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "1 day" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Chatverhalten%nl%{@p} &7Dauer: <#EF7726>1 Tag%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fWir haben dich gehört, jetzt psst&8“" to player for 2 seconds
+	
+	index of event-slot is 16:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Diskutieren mit dem Team"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>1 Tag"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "1 day" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Diskutieren mit dem Team%nl%{@p} &7Dauer: <#EF7726>1 Tag%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fDu hast genug gesagt&8“" to player for 2 seconds
+	
+	index of event-slot is 19:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Erpressung/Drohung"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>1 Tag"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "1 day" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Erpressung/Drohung%nl%{@p} &7Dauer: <#EF7726>1 Tag%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fBitte weniger Internet&8“" to player for 2 seconds
+	
+	index of event-slot is 20:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Trolling"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>1 Tag"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "1 day" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Trolling%nl%{@p} &7Dauer: <#EF7726>1 Tag%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fMund zu, Chat an&8“" to player for 2 seconds
+	
+	index of event-slot is 21:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Provokation"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>12 Stunden"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "12 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Provokation%nl%{@p} &7Dauer: <#EF7726>12 Stunden%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fMund zu, Chat an&8“" to player for 2 seconds
+
+	index of event-slot is 22:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Starke Beleidigung"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>10 Stunden"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "10 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Starke Beleidigung%nl%{@p} &7Dauer: <#EF7726>10 Stunden%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fChat ist kein Boxring&8“" to player for 2 seconds
+	
+	index of event-slot is 23:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Beleidigung"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>6 Stunden"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "6 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Beleidigung%nl%{@p} &7Dauer: <#EF7726>6 Stunden%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fEinmal tief durchatmen&8“" to player for 2 seconds
+
+	index of event-slot is 24:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Bettellei"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>6 Stunden"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "6 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Bettellei%nl%{@p} &7Dauer: <#EF7726>6 Stunden%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fSkill issue&8“" to player for 2 seconds
+
+	index of event-slot is 25:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Gemuted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Caps/Spam"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>6 Stunden"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "6 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Gemuted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalMinutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7Du wurdest &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "dreamcraft.system.punish.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7hat <#EF7726>%{_v}% &7gemuted%nl%{@p} &7Grund: <#EF7726>Caps/Spam%nl%{@p} &7Dauer: <#EF7726>6 Stunden%nl%" to loop-player
+		send title "&3&lSPIELER GEMUTED" to player for 2 seconds 
+		send subtitle "&8„&fDas war jetzt echt unnötig&8“" to player for 2 seconds
+
+on command:
+	command is "msg" or "message" or "whisper" or "w" or "tell" or "t" or "me":
+		{mute::%player%::status} is true:
+			timeleft(player) is true:
+				set {_v} to player 
+				cancel event 
+				set {_left} to calcleft({_v})
+				set {_days} to days of {_left}
+				set {_hours} to hours of {_left}
+				set {_minutes} to minutes of {_left}
+				set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+				set {_totalDays} to days of {_left}
+				set {_totalHours} to hours of {_left}
+				set {_totalMinutes} to minutes of {_left}
+				set {_hours} to {_totalHours} - ({_totalDays} * 24)
+				set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+				set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+				# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+				set {mute::%{_v}%::msg} to "%nl%{@p} &7Du bist &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+				send {mute::%player%::msg} to player 
+			else:
+				set {_v} to player 
+				set {mutestate.%{_v}%} to "<#32EA27>Nicht gemutet"
+				set {mute::%{_v}%::status} to false 
+				delete {mute::%{_v}%::*}
+				loop all players:
+					loop-player has permission "dreamcraft.system.unpunish.notify":
+						send "{@p} <#32EA28>%{_v}% &7wurde <#EF7726>automatisch <#32EA28>entmuted" to loop-player
+				send "%nl%{@p} &7Du wurdest automatisch <#32EA28>entmuted%nl%{@p} &7Deine Strafe ist vorbei, bitte halte dich%nl%{@p} &7künftig an die Regeln. Viel Spaß!%nl%" to {_v}
+
+on chat:
+	{mute::%player%::status} is true:
+		timeleft(player) is true:
+			set {_v} to player 
+			cancel event 
+			set {_left} to calcleft({_v})
+			set {_days} to days of {_left}				
+			set {_hours} to hours of {_left}
+			set {_minutes} to minutes of {_left}
+			set {_text} to "%{_days}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+			set {_totalDays} to days of {_left}
+			set {_totalHours} to hours of {_left}
+			set {_totalMinutes} to minutes of {_left}
+			set {_hours} to {_totalHours} - ({_totalDays} * 24)
+			set {_minutes} to {_totalMinutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+			set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% Tage, %{_hours}% Stunden und %{_minutes}% Minuten"
+			# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+			set {mute::%{_v}%::msg} to "%nl%{@p} &7Du bist &4&lGEMUTED%nl%{@p} &7Grund: %{mute::%{_v}%::reason}%%nl%{@p} &7Dauer: %{mute::%{_v}%::duration}%%nl%{@p} &7Endet: %{mute::%{_v}%::enddate}%%nl%{@p} &7Verbleibend: %{mute::%{_v}%::left}%%nl%"
+			send {mute::%player%::msg} to player 
+		else:
+			set {_v} to player 
+			set {mutestate.%{_v}%} to "<#32EA27>Nicht gemutet"
+			set {mute::%{_v}%::status} to false 
+			delete {mute::%{_v}%::*}
+			loop all players:
+				loop-player has permission "dreamcraft.system.unpunish.notify":
+					send "{@p} <#32EA28>%{_v}% &7wurde <#EF7726>automatisch <#32EA28>entmuted" to loop-player
+			send "%nl%{@p} &7Du wurdest automatisch <#32EA28>entmuted%nl%{@p} &7Deine Strafe ist vorbei, bitte halte dich%nl%{@p} &7künftig an die Regeln. Viel Spaß!%nl%" to {_v} 
+
+on join:
+	{ban::%player%::status} is true:
+		wait 2 seconds
+		player is online:
+			set {_v} to player 
+			delete {ban::%{_v}%::*}
+			set {ban::%{_v}%::state} to "<#32EA27>Nicht gebannt"
+			close player's inventory 
+			loop all players:
+				loop-player has permission "dreamcraft.system.unpunish.notify":
+					send "{@p} <#32EA28>%{_v}% &7wurde <#EF7726>automatisch <#32EA28>entbannt"

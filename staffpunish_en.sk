@@ -1,0 +1,1136 @@
+options:
+	p: §x§C§0§1§4§1§4§lPUNISH &8→&7
+	gui: &8[§x§C§0§1§4§1§4§lPUNISH MENU&8] &8→ &eHomePage
+	bangui: &8[§x§C§0§1§4§1§4§lPUNISH MENU&8] &8→ &cBans
+	unpunishgui: &8[§x§C§0§1§4§1§4§lUNPUNISH MENU&8] &8→ &eHomePage
+	kickgui: &8[§x§C§0§1§4§1§4§lPUNISH MENU&8] &8→ &x&F&A&B&3&3&0Kicks
+	mutegui: &8[§x§C§0§1§4§1§4§lPUNISH MENU&8] &8→ &x&F&3&2&1&E&5Mutes
+	dc: https://discord.gg/bWQX7FYpnQ
+
+
+function punishmenu(m: player, v: offline player):
+	set {_punishmenu} to a new chest inventory with 4 row named "{@gui}" 
+	set slot 0 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 1 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 2 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 3 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 4 of {_punishmenu} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Banned: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Current Page: &eHomePage &8«"
+	set slot 5 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 6 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 7 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 8 of {_punishmenu} to black stained glass pane named ""
+	set slot 9 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 10 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 11 of {_punishmenu} to red dye named "&8» <#DE1717>Ban" with lore "&8ᴘᴜɴɪꜱʜ-ᴄᴀᴛᴇɢᴏʀʏ" and "&f" and "&8➥ &7Open the ban catalog"
+	set slot 12 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 13 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 14 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 15 of {_punishmenu} to magenta dye named "&8» <#F321E5>Mute" with lore "&8ᴘᴜɴɪꜱʜ-ᴄᴀᴛᴇɢᴏʀʏ" and "&f" and "&8➥ &7Open the mute catalog"
+	set slot 16 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 17 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 18 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 19 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 20 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 21 of {_punishmenu} to orange dye named "&8» <#FAB330>Kick" with lore "&8&8ᴘᴜɴɪꜱʜ-ᴄᴀᴛᴇɢᴏʀʏ" with lore "&f" and "&8➥ &7Open the kick catalog"
+	set slot 22 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 23 of {_punishmenu} to green dye named "&8» <#30FA3E>Unpunish" with lore "&8ᴘᴜɴɪꜱʜ-ᴄᴀᴛᴇɢᴏʀʏ" and "&f" and "&8➥ &7Open the unpunish menu &8(&e/unpunish %{_v}%&8)"
+	set slot 24 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 25 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 26 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 27 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 28 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 29 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 30 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 31 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 32 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 33 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 34 of {_punishmenu} to black stained glass pane named "&f"
+	set slot 35 of {_punishmenu} to black stained glass pane named "&f"
+	open {_punishmenu} to {_m}
+	set {lastpunish.%{_m}%} to {_v}
+
+function unpunishmenu(m: player, v: offline player):
+	set {_unpunish} to a new chest inventory with 3 row named "{@unpunishgui}"
+	set slot 0 of {_unpunish} to black stained glass pane named "&f"
+	set slot 1 of {_unpunish} to black stained glass pane named "&f"
+	set slot 2 of {_unpunish} to black stained glass pane named "&f"
+	set slot 3 of {_unpunish} to black stained glass pane named "&f"
+	set slot 4 of {_unpunish} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Banned: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Current Page: &aUnpunish Menu &8«"
+	set slot 5 of {_unpunish} to black stained glass pane named "&f"
+	set slot 6 of {_unpunish} to black stained glass pane named "&f"
+	set slot 7 of {_unpunish} to black stained glass pane named "&f"
+	set slot 8 of {_unpunish} to black stained glass pane named "&f"
+	set slot 9 of {_unpunish} to black stained glass pane named "&f"
+	set slot 10 of {_unpunish} to black stained glass pane named "&f"
+	set slot 11 of {_unpunish} to crimson button named "&8» <#EA7627>Unban" with lore "&8ᴜɴᴘᴜɴɪꜱʜ-ᴄᴀᴛᴇɢᴏʀʏ" and "&f" and "&8➥ &7Click to <#EA7627>unban the player"
+	set slot 12 of {_unpunish} to black stained glass pane named "&f"
+	set slot 13 of {_unpunish} to black stained glass pane named "&f"
+	set slot 14 of {_unpunish} to black stained glass pane named "&f"
+	set slot 15 of {_unpunish} to cherry button named "&8» <#EF26DA>Unmute" with lore "&8ᴜɴᴘᴜɴɪꜱʜ-ᴄᴀᴛᴇɢᴏʀʏ" and "&f" and "&8➥ &7Click to <#EF26DA>unmute the player"
+	set slot 16 of {_unpunish} to black stained glass pane named "&f"
+	set slot 17 of {_unpunish} to black stained glass pane named "&f"
+	set slot 18 of {_unpunish} to black stained glass pane named "&f"
+	set slot 19 of {_unpunish} to black stained glass pane named "&f"
+	set slot 20 of {_unpunish} to black stained glass pane named "&f"
+	set slot 21 of {_unpunish} to black stained glass pane named "&f"
+	set slot 22 of {_unpunish} to black stained glass pane named "&f"
+	set slot 23 of {_unpunish} to black stained glass pane named "&f"
+	set slot 24 of {_unpunish} to black stained glass pane named "&f"
+	set slot 25 of {_unpunish} to black stained glass pane named "&f"
+	set slot 26 of {_unpunish} to black stained glass pane named "&f"
+	open {_unpunish} to {_m}
+	set {lastunpunish.%{_m}%} to {_v}
+
+
+function banmenu(m: player, v: offline player):
+	set {_banmenu} to a new chest inventory with 4 row named "{@bangui}"
+	set slot 0 of {_banmenu} to arrow named "&8» &7Back to Homepage"
+	set slot 1 of {_banmenu} to black stained glass pane named "&f"
+	set slot 2 of {_banmenu} to black stained glass pane named "&f"
+	set slot 3 of {_banmenu} to black stained glass pane named "&f"
+	set slot 4 of {_banmenu} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Banned: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Current Page: &cBan Catalog &8«"
+	set slot 5 of {_banmenu} to black stained glass pane named ""
+	set slot 6 of {_banmenu} to black stained glass pane named ""
+	set slot 7 of {_banmenu} to black stained glass pane named ""
+	set slot 8 of {_banmenu} to black stained glass pane named ""
+	set slot 9 of {_banmenu} to black stained glass pane named ""
+	{_m} has permission "punishok.moderator":
+		set {_r} to "&7Click to ban this player"
+	else:
+		set {_r} to "&7You cannot use this ban reason &8(&3Mod+&8)"
+	set slot 10 of {_banmenu} to book named "&8» <#DEB017>Permanent ban" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DE7817>Permanent" and "&8➥ %{_r}%"
+	set slot 11 of {_banmenu} to book named "&8» <#DEB017>Duping" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DE7817>Permanent" and "&8➥ &7Click to ban this player"
+	set slot 12 of {_banmenu} to book named "&8» <#DEB017>Online shop fraud" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DE7817>Permanent" and "&8➥ &7Click to ban this player"
+	set slot 13 of {_banmenu} to book named "&8» <#DEB017>Punishment evasion" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DEB017>30 days" and "&8➥ &7Click to ban this player"
+	set slot 14 of {_banmenu} to book named "&8» <#DEB017>Unauthorized client modifications" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DEB017>14 days" and "&8➥ &7Click to ban this player"
+	set slot 15 of {_banmenu} to book named "&8» <#DEB017>Unauthorized builds" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DEB017>14 days" and "&8➥ &7Click to ban this player"
+	set slot 16 of {_banmenu} to book named "&8» <#DEB017>Scamming" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DEB017>14 days" and "&8➥ &7Click to ban this player"
+	set slot 17 of {_banmenu} to black stained glass pane named "&f"
+	set slot 18 of {_banmenu} to black stained glass pane named "&f"
+	set slot 19 of {_banmenu} to book named "&8» <#DEB017>Bugusing" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DEB017>7 days" and "&8➥ &7Click to ban this player"
+	set slot 20 of {_banmenu} to book named "&8» <#DEB017>Unauthorized name/skin" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration &8→ <#DEB017>7 days" and "&8➥ &7Click to ban this player"
+	set slot 21 of {_banmenu} to black stained glass pane named "&f"
+	set slot 22 of {_banmenu} to black stained glass pane named "&f"
+	set slot 23 of {_banmenu} to black stained glass pane named "&f"
+	set slot 24 of {_banmenu} to black stained glass pane named "&f"
+	set slot 25 of {_banmenu} to black stained glass pane named "&f"
+	set slot 26 of {_banmenu} to black stained glass pane named "&f"
+	set slot 27 of {_banmenu} to black stained glass pane named "&f"
+	set slot 28 of {_banmenu} to black stained glass pane named "&f"
+	set slot 29 of {_banmenu} to black stained glass pane named "&f"
+	set slot 30 of {_banmenu} to black stained glass pane named "&f"
+	set slot 31 of {_banmenu} to black stained glass pane named "&f"
+	set slot 32 of {_banmenu} to black stained glass pane named "&f"
+	set slot 33 of {_banmenu} to black stained glass pane named "&f"
+	set slot 34 of {_banmenu} to black stained glass pane named "&f"
+	set slot 35 of {_banmenu} to black stained glass pane named "&f"
+	open {_banmenu} to {_m} 
+
+function kickmenu(m: player, v: offline player):
+	set {_kickmenu} to a new chest inventory with 4 row named "{@kickgui}"
+	set slot 0 of {_kickmenu} to arrow named "&8» &7Back to Homepage"
+	set slot 1 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 2 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 3 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 4 of {_kickmenu} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Banned: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Current Page: <#FAB330>Kick Catalog &8«"
+	set slot 5 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 6 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 7 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 8 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 9 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 10 of {_kickmenu} to book named "&8» <#FAB330>Disrupting a shop purchase" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥&7 Click to kick the player"
+	set slot 11 of {_kickmenu} to book named "&8» <#FAB330>Rejoin-Request" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥&7 Click to kick the player"
+	set slot 12 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 13 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 14 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 15 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 16 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 17 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 18 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 19 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 20 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 21 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 22 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 23 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 24 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 25 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 26 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 27 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 28 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 29 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 30 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 31 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 32 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 33 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 34 of {_kickmenu} to black stained glass pane named "&f"
+	set slot 35 of {_kickmenu} to black stained glass pane named "&f"
+	open {_kickmenu} to {_m}
+
+function mutemenu(m: player, v: offline player):
+	set {_mutemenu} to a new chest inventory with 4 row named "{@mutegui}"
+	set slot 0 of {_mutemenu} to arrow named "&8» &7Back to Homepage"
+	set slot 1 of {_mutemenu} to black stained glass pane named ""
+	set slot 2 of {_mutemenu} to black stained glass pane named ""
+	set slot 3 of {_mutemenu} to black stained glass pane named ""
+	set slot 4 of {_mutemenu} to skull of {_v} with name "{@p} &c%{_v}%" with lore "&f" and "&8➥ &7Banned: %{ban::%{_v}%::state}%" and "&8➥ &7Muted: %{mutestate.%{_v}%}%" and "&8» &7Current Page: <#F321E5>Mute Catalog &8«"
+	set slot 5 of {_mutemenu} to black stained glass pane named ""
+	set slot 6 of {_mutemenu} to black stained glass pane named ""
+	set slot 7 of {_mutemenu} to black stained glass pane named ""
+	set slot 8 of {_mutemenu} to black stained glass pane named ""
+	set slot 9 of {_mutemenu} to black stained glass pane named ""
+	set slot 10 of {_mutemenu} to book named "&8» <#DEB017>Advertising" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DE7817>Permanent" and "&8➥ &7Click to mute this player"
+	{_m} has permission "punishok.moderator":
+		set {_r} to "&7Click to mute this player"
+	else:
+		set {_r} to "&7You cannot use this mute reason &8(&3Mod+&8)"
+	set slot 11 of {_mutemenu} to book named "&8» <#DEB017>Chas restriction" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DE7817>Permanent" and "&8➥ %{_r}%"
+	set slot 12 of {_mutemenu} to book named "&8» <#DEB017>Child protection" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DE7817>Permanent" and "&8➥ &7Click to mute this player"
+	set slot 13 of {_mutemenu} to book named "&8» <#DEB017>(Sexual) harassment" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>14 days" and "&8➥ &7Click to mute this player"
+	set slot 14 of {_mutemenu} to book named "&8» <#DEB017>Real-money trading" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>14 days" and "&8➥ &7Click to mute this player"
+	set slot 15 of {_mutemenu} to book named "&8» <#DEB017>Chas behavior" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>1 day" and "&8➥ &7Click to mute this player"
+	set slot 16 of {_mutemenu} to book named "&8» <#DEB017>Arguing with the team" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>1 day" and "&8➥ &7Click to mute this player"
+	set slot 17 of {_mutemenu} to black stained glass pane named "&f"
+	set slot 18 of {_mutemenu} to black stained glass pane named ""
+	set slot 19 of {_mutemenu} to book named "&8» <#DEB017>Extortion/Threats" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>1 day" and "&8➥ &7Click to mute this player"
+	set slot 20 of {_mutemenu} to book named "&8» <#DEB017>Trolling" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>1 days" and "&8➥ &7Click to mute this player"
+	set slot 21 of {_mutemenu} to book named "&8» <#DEB017>Provocation" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>12 hours" and "&8➥ &7Click to mute this player"
+	set slot 22 of {_mutemenu} to book named "&8» <#DEB017>Severe insult" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>10 hours" and "&8➥ &7Click to mute this player"
+	set slot 23 of {_mutemenu} to book named "&8» <#DEB017>Insult" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>6 hours" and "&8➥ &7Click to mute this player"
+	set slot 24 of {_mutemenu} to book named "&8» <#DEB017>Begging" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>6 hours" and "&8➥ &7Click to mute this player"
+	set slot 25 of {_mutemenu} to book named "&8» <#DEB017>Spamming/Caps" with lore "&8ᴘᴜɴɪꜱʜ-ʀᴇᴀꜱᴏɴ" and "&f" and "&8➥ &7Duration: <#DEB017>6 hours" and "&8➥ &7Click to mute this player"
+	set slot 26 of {_mutemenu} to black stained glass pane named ""
+	set slot 27 of {_mutemenu} to black stained glass pane named ""
+	set slot 28 of {_mutemenu} to black stained glass pane named ""
+	set slot 29 of {_mutemenu} to black stained glass pane named ""
+	set slot 30 of {_mutemenu} to black stained glass pane named ""
+	set slot 31 of {_mutemenu} to black stained glass pane named ""
+	set slot 32 of {_mutemenu} to black stained glass pane named ""
+	set slot 33 of {_mutemenu} to black stained glass pane named ""
+	set slot 34 of {_mutemenu} to black stained glass pane named ""
+	set slot 35 of {_mutemenu} to black stained glass pane named ""
+	open {_mutemenu} to {_m}
+
+function timeleft(t: player) :: boolean:
+	set {_time} to {mute::%{_t}%::date} + {mute::%{_t}%::dur}
+	{_time} > now:
+		set {_left} to difference between now and {_time} 
+		set {mute::%{_t}%::left} to {_left}
+		return true 
+	else:
+		return false 
+
+function calcleft(t: offline player) :: timespan:
+	set {_time} to {mute::%{_t}%::date} + {mute::%{_t}%::dur}
+	if {_time} > now:
+		return difference between now and {_time}
+
+
+command /punish <offline player>:
+	permission: dreamcraft.system.punish 
+	permission message: {@p} &7You do not have permission for this!
+	usage: {@p} &7Syntax: &e/punish <player>
+	trigger:
+		{mutestate.%arg-1%} is not set:
+			set {mutestate.%arg-1%} to "<#32EA27>Not muted"
+		{ban::%arg-1%::state} is not set:
+			set {ban::%arg-1%::state} to "<#32EA27>Not banned"
+		arg-1 has permission "dreamcraft.system.punish.bypass":
+			send "{@p} &7You cannot punish this player!"
+			stop 
+		punishmenu(player, arg-1)
+
+command /unpunish <offline player>:
+	permission: punishok.unpunish 
+	permission message: {@p} &7You do not have permission for this!
+	usage: {@p} &7Syntax: &e/unpunish <player>
+	trigger:
+		unpunishmenu(player, arg-1)
+
+on inventory-click:
+	name of event-inventory is "{@gui}"
+	cancel event 
+
+	clicked inventory is player's inventory:
+		stop
+
+	index of event-slot is 11:
+		banmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 15:
+		mutemenu(player, {lastpunish.%player%})
+	
+	index of event-slot is 21:
+		kickmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 23:
+		make player execute command "/unpunish %{lastpunish.%player%}%"
+
+on inventory-click:
+	name of event-inventory is "{@bangui}"
+	cancel event 
+
+	clicked inventory is player's inventory:
+		stop 
+
+	index of event-slot is 0:
+		punishmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 10:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Permanent ban"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>Permanent"
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Permanent ban%nl%&7Moderator: &3%player%%nl%&7Duration: &3Permanent%nl%&7Ends in: &3Never%nl%%nl%&7Unban request: &e{@dc}"
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Permanent ban%nl%{@p} &7Duration: <#EF7726>Permanent%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fAs stated in the server constitution: out.&8“"
+	
+	index of event-slot is 11:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Duping"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>Permanent"
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Duping%nl%&7Moderator: &3%player%%nl%&7Duration: &3Permanent%nl%&7Ends in: &3Never%nl%%nl%&7Unban request: &e{@dc}"
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Duping%nl%{@p} &7Duration: <#EF7726>Permanent%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fBrave. But wrong.&8“"
+	
+	index of event-slot is 12:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Online shop fraud"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>Permanent"
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Online shop fraud%nl%&7Moderator: &3%player%%nl%&7Duration: &3Permanent%nl%&7Ends in: &3Never%nl%%nl%&7Unban request: &e{@dc}"
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Online shop fraud%nl%{@p} &7Duration: <#EF7726>Permanent%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fThank you for your cooperation&8“"
+	
+	index of event-slot is 13:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Punishment evasion"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>30 days"
+		set {ban::%{_v}%::dur} to "30 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Punishment evasion%nl%&7Moderator: &3%player%%nl%&7Duration: &330 days%nl%&7Ends: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Unban request: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Punishment evasion%nl%{@p} &7Duration: <#EF7726>30 days%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fThas was kind of dumb&8“"
+	
+	index of event-slot is 14:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Unauthorized client modifications"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>14 days"
+		set {ban::%{_v}%::dur} to "14 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Unauthorized client modifications%nl%&7Moderator: &3%player%%nl%&7Duration: &314 days%nl%&7Ends: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Unban request: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Unauthorized client modifications%nl%{@p} &7Duration: <#EF7726>14 days%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fWho allowed you to have fun?&8“"
+	
+	index of event-slot is 15:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Unauthorized builds"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>14 days"
+		set {ban::%{_v}%::dur} to "14 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Unauthorized builds%nl%&7Moderator: &3%player%%nl%&7Duration: &314 days%nl%&7Ends: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Unban request: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Unauthorized builds%nl%{@p} &7Duration: <#EF7726>14 days%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fWrong server&8“" to player for 2 seconds
+	
+	index of event-slot is 16:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Scamming"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>14 days"
+		set {ban::%{_v}%::dur} to "14 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Scamming%nl%&7Moderator: &3%player%%nl%&7Duration: &314 days%nl%&7Ends: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Unban request: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Scamming%nl%{@p} &7Duration: <#EF7726>14 days%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fThas was impressively stupid.&8“" to player for 2 seconds
+	
+	index of event-slot is 19:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Bugusing"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>7 days"
+		set {ban::%{_v}%::dur} to "7 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Bugusing%nl%&7Moderator: &3%player%%nl%&7Duration: &37 days%nl%&7Ends: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Unban request: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Bugusing%nl%{@p} &7Duration: <#EF7726>7 days%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fYou tried. Respect.&8“" to player for 2 seconds
+	
+	index of event-slot is 20:
+		set {_v} to {lastpunish.%player%}
+		{ban::%{_v}%::status} is true:
+			stop 
+		set {ban::%{_v}%::status} to true
+		set {ban::%{_v}%::state} to "<#DB1515>Banned"
+		set {ban::%{_v}%::reason} to "<#EF7726>Unauthorized name/skin"
+		set {ban::%{_v}%::mod} to "<#EF7726>%player%"
+		set {ban::%{_v}%::duration} to "<#EF7726>7 days"
+		set {ban::%{_v}%::dur} to "7 days" parsed as timespan
+		set {ban::%{_v}%::date} to now
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {ban::%{_v}%::date} + {ban::%{_v}%::dur}
+		set {_formatted} to {ban::%{_v}%::enddate} formatted as "dd/MM/yyyy HH:mm"
+		wait 1 tick
+		set {ban::%{_v}%::enddate} to {_formatted}
+		set {ban::%{_v}%::left} to difference between now and {ban::%{_v}%::enddate} 
+		
+		ban and kick {_v} due to "%nl%%nl%{@p} &7You were &4&lBANNED%nl%%nl%&7Reason: &3Unauthorized name/skin%nl%&7Moderator: &3%player%%nl%&7Duration: &37 days%nl%&7Ends: %{ban::%{_v}%::enddate}% UTC%nl%%nl%&7Unban request: &e{@dc}" for {ban::%{_v}%::dur}
+		send "{@p} &7You have <#EF7726>%{_v}% &7banned"
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7banned%nl%{@p} &7Reason: <#EF7726>Unauthorized name/skin%nl%{@p} &7Duration: <#EF7726>7 days%nl%"
+		close player's inventory 
+		send title "&3&lPLAYER BANNED" to player for 2 seconds 
+		send subtitle "&8„&fPlot twist: you are the plot.&8“" to player for 2 seconds
+
+on inventory-click:
+	name of event-inventory is "{@unpunishgui}"
+	cancel event 
+
+	clicked inventory is player's inventory:
+		stop
+
+	index of event-slot is 11:
+		{lastunpunish.%player%} is banned:
+			set {_v} to {lastunpunish.%player%}
+			unban {lastunpunish.%player%} 
+			delete {ban::%{_v}%::*}
+			set {ban::%{_v}%::state} to "<#32EA27>Not banned"
+			close player's inventory 
+			send "{@p} &7You have <#EF7726>%{_v}% <#32EA28>unbanned"
+			loop all players:
+				loop-player has permission "punishok.unpunish.notify":
+					send "{@p} <#32EA28>%{_v}% &7was unbanned by <#EF7726>%player%"
+
+	index of event-slot is 15:
+		set {_v} to {lastunpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			set {mutestate.%{_v}%} to "<#32EA27>Not muted"
+			set {mute::%{_v}%::status} to false 
+			delete {mute::%{_v}%::*}
+			close player's inventory 
+			send "{@p} &7You have <#EF7726>%{_v}% <#32EA28>unmuted"
+			loop all players:
+				loop-player has permission "punishok.unpunish.notify":
+					send "{@p} <#32EA28>%{_v}% &7was unmuted by <#EF7726>%player%" to loop-player
+			{_v} is online:
+				send "%nl%{@p} &7You were <#32EA28>unmuted" to {_v}
+				send "{@p} &7Moderator: &3%player%%nl%" to {_v}
+
+on inventory-click:
+	name of event-inventory is "{@kickgui}"
+	cancel event 
+
+	clicked inventory is player's inventory:
+		stop
+
+	index of event-slot is 0:
+		punishmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 10:
+		set {_v} to {lastpunish.%player%}
+		{_v} is online:
+			kick {_v} due to "%nl%%nl%{@p} &7You were &4&lKICKED%nl%%nl%&7Reason: &3Disrupting a shop purchase%nl%&7Moderator: &3%player%"
+			send "{@p} &7You have <#3BFA30>%{_v}% <#FAB330>kicked"
+			loop all players:
+				loop-player has permission "punishok.notify":
+					send "%nl%{@p} <#EF7726>%player%&7 has <#3BFA30>%{_v}% kicked%nl%{@p} &7Reason: <#FAB330>Disrupting a shop purchase%nl%"
+			close player's inventory 
+			send title "&3&lPLAYER KICKED" to player for 2 seconds
+
+	index of event-slot is 11:
+		set {_v} to {lastpunish.%player%}
+		{_v} is online:
+			kick {_v} due to "%nl%%nl%{@p} &7You were &4&lKICKED%nl%%nl%&7Reason: &3Please &3&nrejoin%nl%&7Moderator: &3%player%"
+			send "{@p} &7You have <#3BFA30>%{_v}% <#FAB330>kicked"
+			loop all players:
+				loop-player has permission "punishok.notify":
+					send "%nl%{@p} <#EF7726>%player%&7 has <#3BFA30>%{_v}% kicked%nl%{@p} &7Reason: <#FAB330>Please rejoin%nl%"
+			close player's inventory
+			send title "&3&lPLAYER KICKED" to player for 2 seconds
+
+on inventory-click:
+	name of event-inventory is "{@mutegui}"
+	cancel event 
+	
+	clicked inventory is player's inventory:
+		stop 
+
+	index of event-slot is 0:
+		punishmenu(player, {lastpunish.%player%})
+
+	index of event-slot is 10:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Advertising"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>Permanent"
+		set {mute::%{_v}%::date} to now
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {mute::%{_v}%::enddate} to "<#14A7A7>Never"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Advertising%nl%{@p} &7Duration: <#EF7726>Permanent%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fMinecraft, but you are not allowed to play.&8“" to player for 2 seconds
+
+	index of event-slot is 11:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Chas restriction"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>Permanent"
+		set {mute::%{_v}%::date} to now
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {mute::%{_v}%::enddate} to "<#14A7A7>Never"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Chas restriction%nl%{@p} &7Duration: <#EF7726>Permanent%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fYour Wi-Fi now has more rights than you.&8“" to player for 2 seconds
+
+	index of event-slot is 12:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Child protection"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>Permanent"
+		set {mute::%{_v}%::date} to now
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {mute::%{_v}%::enddate} to "<#14A7A7>Never"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Child protection%nl%{@p} &7Duration: <#EF7726>Permanent%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fAnd gone.&8“" to player for 2 seconds
+	
+	index of event-slot is 13:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>(Sexual) harassment"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>14 days"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "14 days" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>(Sexual) harassment%nl%{@p} &7Duration: <#EF7726>14 days%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fTouch some grass&8“" to player for 2 seconds
+	
+	index of event-slot is 14:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Real-money trading"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>14 days"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "14 days" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Real-money trading%nl%{@p} &7Duration: <#EF7726>14 days%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fWrong chas.&8“" to player for 2 seconds
+	
+	index of event-slot is 15:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Chas behavior"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>1 day"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "1 day" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Chas behavior%nl%{@p} &7Duration: <#EF7726>1 day%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fWe heard you, now shh&8“" to player for 2 seconds
+	
+	index of event-slot is 16:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Arguing with the team"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>1 day"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "1 day" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Arguing with the team%nl%{@p} &7Duration: <#EF7726>1 day%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fYou have said enough&8“" to player for 2 seconds
+	
+	index of event-slot is 19:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Extortion/Threats"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>1 day"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "1 day" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Extortion/Threats%nl%{@p} &7Duration: <#EF7726>1 day%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fPlease use less internet&8“" to player for 2 seconds
+	
+	index of event-slot is 20:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Trolling"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>1 day"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "1 day" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Trolling%nl%{@p} &7Duration: <#EF7726>1 day%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fShut up, chas on&8“" to player for 2 seconds
+	
+	index of event-slot is 21:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Provocation"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>12 hours"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "12 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Provocation%nl%{@p} &7Duration: <#EF7726>12 hours%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fShut up, chas on&8“" to player for 2 seconds
+
+	index of event-slot is 22:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Severe insult"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>10 hours"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "10 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Severe insult%nl%{@p} &7Duration: <#EF7726>10 hours%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fThe chas is not a boxing ring&8“" to player for 2 seconds
+	
+	index of event-slot is 23:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Insult"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>6 hours"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "6 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Insult%nl%{@p} &7Duration: <#EF7726>6 hours%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fTake a deep breath&8“" to player for 2 seconds
+
+	index of event-slot is 24:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Begging"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>6 hours"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "6 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Begging%nl%{@p} &7Duration: <#EF7726>6 hours%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fSkill issue&8“" to player for 2 seconds
+
+	index of event-slot is 25:
+		set {_v} to {lastpunish.%player%}
+		{mute::%{_v}%::status} is true:
+			stop 
+		set {mute::%{_v}%::status} to true
+		set {mute::%{_v}%::state} to "<#14A7A7>Muted"
+		set {mute::%{_v}%::reason} to "<#14A7A7>Caps/Spam"
+		set {mute::%{_v}%::mod} to "<#14A7A7>%player%"
+		set {mute::%{_v}%::duration} to "<#14A7A7>6 hours"
+		set {mute::%{_v}%::date} to now
+		set {mute::%{_v}%::dur} to "6 hours" parsed as timespan
+		set {mutestate.%{_v}%} to "<#DB1515>Muted"
+		wait 1 tick
+		set {_w} to {mute::%{_v}%::date} + {mute::%{_v}%::dur}
+		set {_formatted} to {_w} formatted as "dd/MM/yyyy HH:mm"
+		set {mute::%{_v}%::end} to {_formatted}
+		set {mute::%{_v}%::enddate} to "<#14A7A7>%{_formatted}%"
+		set {_left} to calcleft({_v})
+		set {_days} to days of {_left}
+		set {_hours} to hours of {_left}
+		set {_minutes} to minutes of {_left}
+		set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+		set {_totalDays} to days of {_left}
+		set {_totalHours} to hours of {_left}
+		set {_totalminutes} to minutes of {_left}
+		set {_hours} to {_totalHours} - ({_totalDays} * 24)
+		set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+		set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+		# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+		set {mute::%{_v}%::msg} to "%nl%{@p} &7You were &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+		{_v} is online:
+			send {mute::%{_v}%::msg} to {_v}
+		close player's inventory
+		loop all players:
+			loop-player has permission "punishok.notify":
+				send "%nl%{@p} <#3BFA30>%player% &7has <#EF7726>%{_v}% &7muted%nl%{@p} &7Reason: <#EF7726>Caps/Spam%nl%{@p} &7Duration: <#EF7726>6 hours%nl%" to loop-player
+		send title "&3&lPLAYER MUTED" to player for 2 seconds 
+		send subtitle "&8„&fThas was really unnecessary&8“" to player for 2 seconds
+
+on command:
+	command is "msg" or "message" or "whisper" or "w" or "tell" or "t" or "me":
+		{mute::%player%::status} is true:
+			timeleft(player) is true:
+				set {_v} to player 
+				cancel event 
+				set {_left} to calcleft({_v})
+				set {_days} to days of {_left}
+				set {_hours} to hours of {_left}
+				set {_minutes} to minutes of {_left}
+				set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+				set {_totalDays} to days of {_left}
+				set {_totalHours} to hours of {_left}
+				set {_totalminutes} to minutes of {_left}
+				set {_hours} to {_totalHours} - ({_totalDays} * 24)
+				set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+				set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+				# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+				set {mute::%{_v}%::msg} to "%nl%{@p} &7You are &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+				send {mute::%player%::msg} to player 
+			else:
+				set {_v} to player 
+				set {mutestate.%{_v}%} to "<#32EA27>Not muted"
+				set {mute::%{_v}%::status} to false 
+				delete {mute::%{_v}%::*}
+				loop all players:
+					loop-player has permission "punishok.unpunish.notify":
+						send "{@p} <#32EA28>%{_v}% &7was <#EF7726>automatically <#32EA28>unmuted" to loop-player
+				send "%nl%{@p} &7You were automatically <#32EA28>unmuted%nl%{@p} &7Your punishment is over, please follow%nl%{@p} &7the rules in the future. Have fun!%nl%" to {_v}
+
+on chas:
+	{mute::%player%::status} is true:
+		timeleft(player) is true:
+			set {_v} to player 
+			cancel event 
+			set {_left} to calcleft({_v})
+			set {_days} to days of {_left}				
+			set {_hours} to hours of {_left}
+			set {_minutes} to minutes of {_left}
+			set {_text} to "%{_days}% days, %{_hours}% hours and %{_minutes}% minutes"
+			set {_totalDays} to days of {_left}
+			set {_totalHours} to hours of {_left}
+			set {_totalminutes} to minutes of {_left}
+			set {_hours} to {_totalHours} - ({_totalDays} * 24)
+			set {_minutes} to {_totalminutes} - ({_totalDays} * 1440) - ({_hours} * 60)
+			set {mute::%{_v}%::left} to "<#14A7A7>%{_totalDays}% days, %{_hours}% hours and %{_minutes}% minutes"
+			# set {mute::%{_v}%::left} to "<#14A7A7>%{_left}%"
+			set {mute::%{_v}%::msg} to "%nl%{@p} &7You are &4&lMUTED%nl%{@p} &7Reason: %{mute::%{_v}%::reason}%%nl%{@p} &7Duration: %{mute::%{_v}%::duration}%%nl%{@p} &7Ends: %{mute::%{_v}%::enddate}%%nl%{@p} &7Remaining: %{mute::%{_v}%::left}%%nl%"
+			send {mute::%player%::msg} to player 
+		else:
+			set {_v} to player 
+			set {mutestate.%{_v}%} to "<#32EA27>Not muted"
+			set {mute::%{_v}%::status} to false 
+			delete {mute::%{_v}%::*}
+			loop all players:
+				loop-player has permission "punishok.unpunish.notify":
+					send "{@p} <#32EA28>%{_v}% &7was <#EF7726>automatically <#32EA28>unmuted" to loop-player
+			send "%nl%{@p} &7You were automatically <#32EA28>unmuted%nl%{@p} &7Your punishment is over, please follow%nl%{@p} &7the rules in the future. Have fun!%nl%" to {_v} 
+
+on join:
+	{ban::%player%::status} is true:
+		wait 2 seconds
+		player is online:
+			set {_v} to player 
+			delete {ban::%{_v}%::*}
+			set {ban::%{_v}%::state} to "<#32EA27>Not banned"
+			close player's inventory 
+			loop all players:
+				loop-player has permission "punishok.unpunish.notify":
+					send "{@p} <#32EA28>%{_v}% &7was <#EF7726>automatically <#32EA28>unbanned"
