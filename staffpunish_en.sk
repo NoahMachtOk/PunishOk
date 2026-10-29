@@ -1094,7 +1094,7 @@ on command:
 						send "{@p} <#32EA28>%{_v}% &7was <#EF7726>automatically <#32EA28>unmuted" to loop-player
 				send "%nl%{@p} &7You were automatically <#32EA28>unmuted%nl%{@p} &7Your punishment is over, please follow%nl%{@p} &7the rules in the future. Have fun!%nl%" to {_v}
 
-on chas:
+on chat:
 	{mute::%player%::status} is true:
 		timeleft(player) is true:
 			set {_v} to player 
